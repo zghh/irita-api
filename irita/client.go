@@ -9,7 +9,6 @@ import (
 	iritasdk "github.com/bianjieai/irita-sdk-go"
 	"github.com/bianjieai/irita-sdk-go/modules/nft"
 	"github.com/bianjieai/irita-sdk-go/types"
-	"github.com/bianjieai/irita-sdk-go/types/store"
 	opb "github.com/bianjieai/opb-sdk-go/pkg/app/sdk"
 	"github.com/bianjieai/opb-sdk-go/pkg/app/sdk/model"
 )
@@ -39,7 +38,7 @@ func initClient() error {
 		return fmt.Errorf("parse coin error, %v", err)
 	}
 	options := []types.Option{
-		types.KeyDAOOption(store.NewMemory(nil)),
+		// types.KeyDAOOption(store.NewMemory(nil)),
 		types.FeeOption(types.NewDecCoinsFromCoins(fee)),
 	}
 	cfg, err := types.NewClientConfig(conf.Conf.IritaConf.RPCAddress, conf.Conf.IritaConf.WSAddress, conf.Conf.IritaConf.GRPCAddress, conf.Conf.IritaConf.ChainID, options...)
