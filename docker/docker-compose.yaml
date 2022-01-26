@@ -1,0 +1,15 @@
+version: "3.2"
+
+networks:
+  api:
+
+services:
+  irita-api:
+    image: irita-api
+    container_name: irita-api
+    hostname: irita-api
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    networks:
+      - api
