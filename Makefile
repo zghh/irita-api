@@ -2,6 +2,7 @@ VERSION=1.0.0
 
 irita-api:
 	go build -o bin/irita-api
+	cp -r config bin/
 
 docker:
 	docker build -t irita-api:$(VERSION) -f docker/Dockerfile .

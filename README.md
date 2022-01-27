@@ -388,3 +388,43 @@ method: POST
     ]
 }
 ```
+
+# 部署流程
+
+安装golang 1.14.15
+
+执行以下命令编译
+
+```
+make irita-api
+```
+
+根据实际情况修改bin/config/irita_config.yaml中的配置
+
+```yaml
+server:
+  port: 8080
+
+logger:
+  level: debug
+
+irita:
+  username: test_key_name
+  password: test_password
+  mnemonic: supreme zero ladder chaos blur lake dinner warm rely voyage scan dilemma future spin victory glance legend faculty join man mansion water mansion exotic
+  coin: 100000uirita
+  gasLimit: 200000
+  tlsEnable: false
+  rpcAddress: http://47.100.192.234:26657
+  wsAddress: ws://47.100.192.234:26657
+  grpcAddress: 47.100.192.234:9090
+  chainId: testing
+  projectId: TestProjectID
+  projectKey: TestProjectKey
+  chainAccountAddress: TestChainAccountAddress
+```
+
+在`bin`目录下执行以下命令启动
+```
+./irita-api
+```
