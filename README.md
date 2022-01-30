@@ -428,3 +428,20 @@ irita:
 ```
 ./irita-api
 ```
+
+# docker部署流程
+
+执行以下命令编译
+
+```
+make docker
+```
+
+根据实际情况修改`docker/docker-compose.yaml`中`services.irita-api.environment`的配置
+
+使用以下命令启动
+```
+docker-compose -f docker/docker-compose.yaml up -d
+```
+
+在同一network下其他服务可使用http://irita-api进行访问，不对外暴露本服务的端口只需将`docker/docker-compose.yaml`中`services.irita-api.ports`删除即可
