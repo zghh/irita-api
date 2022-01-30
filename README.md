@@ -444,4 +444,4 @@ make docker
 docker-compose -f docker/docker-compose.yaml up -d
 ```
 
-在同一network下其他服务可使用http://irita-api进行访问，不对外暴露本服务的端口只需将`docker/docker-compose.yaml`中`services.irita-api.ports`删除即可
+在同一network下其他服务可使用`http://irita-api`进行访问，不对外暴露本服务的端口只需将`docker/docker-compose.yaml`中`services.irita-api.ports`删除即可
